@@ -1,35 +1,35 @@
 //Agregar datos a la carta interna
 //comision
-texto = document.getElementById('marca1').innerHTML;
-document.getElementById('marca1copia').innerHTML = texto;
+// texto = document.getElementById('marca1').innerHTML;
+// document.getElementById('marca1copia').innerHTML = texto;
 texto = document.getElementById('titulo1').innerHTML;
 document.getElementById('titulo1copia').innerHTML = texto;
 texto = document.getElementById('descripcion1').innerHTML;
 document.getElementById('descripcion1copia').innerHTML = texto;
 //trasmedia
-texto = document.getElementById('marca2').innerHTML;
-document.getElementById('marca2copia').innerHTML = texto;
+// texto = document.getElementById('marca2').innerHTML;
+// document.getElementById('marca2copia').innerHTML = texto;
 texto = document.getElementById('titulo2').innerHTML;
 document.getElementById('titulo2copia').innerHTML = texto;
 texto = document.getElementById('descripcion2').innerHTML;
 document.getElementById('descripcion2copia').innerHTML = texto;
 //escuela
-texto = document.getElementById('marca3').innerHTML;
-document.getElementById('marca3copia').innerHTML = texto;
+// texto = document.getElementById('marca3').innerHTML;
+// document.getElementById('marca3copia').innerHTML = texto;
 texto = document.getElementById('titulo3').innerHTML;
 document.getElementById('titulo3copia').innerHTML = texto;
 texto = document.getElementById('descripcion3').innerHTML;
 document.getElementById('descripcion3copia').innerHTML = texto;
 //qlvsdicha
-texto = document.getElementById('marca4').innerHTML;
-document.getElementById('marca4copia').innerHTML = texto;
+// texto = document.getElementById('marca4').innerHTML;
+// document.getElementById('marca4copia').innerHTML = texto;
 texto = document.getElementById('titulo4').innerHTML;
 document.getElementById('titulo4copia').innerHTML = texto;
 texto = document.getElementById('descripcion4').innerHTML;
 document.getElementById('descripcion4copia').innerHTML = texto;
 //botiquin
-texto = document.getElementById('marca5').innerHTML;
-document.getElementById('marca5copia').innerHTML = texto;
+// texto = document.getElementById('marca5').innerHTML;
+// document.getElementById('marca5copia').innerHTML = texto;
 texto = document.getElementById('titulo5').innerHTML;
 document.getElementById('titulo5copia').innerHTML = texto;
 texto = document.getElementById('descripcion5').innerHTML;
