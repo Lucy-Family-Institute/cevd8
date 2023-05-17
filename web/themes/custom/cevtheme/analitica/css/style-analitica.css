@@ -1199,3 +1199,7 @@
   .divAnalitica h5 a {
       color: #EFF6E2;
   }
+
+  .contenedorhpeda .segundoCuerpo h5 mark {
+    display: none;
+  }
