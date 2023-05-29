@@ -29,7 +29,7 @@
         "drupal/entity_embed": "^1.1",
         "drupal/field_permissions": "^1.1",
         "drupal/focal_point": "^1.4",
-        "drupal/google_analytics": "^3.1",
+        "drupal/google_analytics": "^4.0",
         "drupal/google_tag": "^1.4",
         "drupal/image_field_caption": "^1.1",
         "drupal/image_url_formatter": "^1.0",
