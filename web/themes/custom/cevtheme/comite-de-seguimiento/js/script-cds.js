@@ -236,7 +236,7 @@ jQuery(window).on('load resize', function(){
  
  
  
- jQuery(window).on('load resize', function() {
+ /*jQuery(window).on('load resize', function() {
  
      width = jQuery(window).width();
  
@@ -250,7 +250,7 @@ jQuery(window).on('load resize', function(){
        
      }
  
- })
+ })*/
  
  
  
