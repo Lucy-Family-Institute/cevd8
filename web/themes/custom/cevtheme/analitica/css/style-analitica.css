@@ -106,7 +106,7 @@
   
   
   .divPrimercuerpo {
-      padding-top: 3rem;
+      /* padding-top: 3rem; */
       display: flex;
       align-items: center;
       justify-content: center;
@@ -354,11 +354,21 @@
   .segundoCuerpo .carousel-control-next {
       right: -50px;
   }
-  .segundoCuerpo .carousel-item p {
+  .segundoCuerpo .carousel-item p, 
+  .segundoCuerpo .contenido-analitica p {
       color: #58457A;
       padding: 1rem 0rem;
       margin: 0.5rem 2rem;
   }
+  
+  .segundoCuerpo .contenido-analitica {
+      width: 20%;
+  }
+  
+  #carousel-inner2 {
+      display: inline-flex;
+  }
+  
   /*AJUSTES DE CARRUSEL DE DRUPAL*/
   .contenedorhpeda .segundoCuerpo .swiper-pagination{
       position: absolute;
@@ -489,7 +499,6 @@
       background-position: center left;
       background-size: cover;
       background-repeat: no-repeat;
-      color: #58457A;  
   }
   .segundoCuerpo .carousel-indicators [data-bs-target]{
       background-color: #EFF6E2;
@@ -1199,7 +1208,7 @@
   .divAnalitica h5 a {
       color: #EFF6E2;
   }
-
+  
   .contenedorhpeda .segundoCuerpo h5 mark {
-    display: none;
+      display: none;
   }
