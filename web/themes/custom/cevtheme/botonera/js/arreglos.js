@@ -73,6 +73,9 @@ clipboard.on('success', function(e) {
     jQuery("[data-bs-toggle='popover']").popover('hide'); 
   },1000);
   e.clearSelection();
+  var texto = jQuery("[data-clipboard-text]").data('clipboard-text');
+  console.log('sadfsadasdfasdfsadf ', texto );
+  
 });
 
 clipboard.on('error', function(e) {
@@ -118,13 +121,23 @@ jQuery("body").on("click", '.cambiar_letra_pequenia', function (e) {
   }
 })
 
+
 function copiarURL(texto) {
-  // Get the text field
-  var copyText = texto;
 
-  // Copy the text inside the text field
-  navigator.clipboard.writeText(copyText.value);
+  var input = document.createElement("input");
+  input.setAttribute("type", "text");
+  input.setAttribute("value", texto);
+  input.classList.add('hidden');
 
-  // Alert the copied text
-  alert("Copied the text: " + copyText.value);
+  //append to form element that you want .
+  document.getElementById("copy-clipboard").appendChild(input);
+
+  // Select the text field
+  input.select();
+  input.setSelectionRange(0, 99999); // For mobile devices
+
+   // Copy the text inside the text field
+  navigator.clipboard.writeText(input.value);
+  
+  input.remove();
 }
