@@ -1565,14 +1565,15 @@ jQuery(document).ready(function () {
       jQuery("#div-circle-time-line").removeAttr("style");
 
       jQuery(".conquien .item-time-line, .conquien .item-time-line-transparent")
-      .addClass("item-time-line-transparent")
+      .addClass("d-none")
       .filter(function () {
         return (
           "Todos" == show_tipo_aliado ||
           jQuery(this).attr("tipo") == show_tipo_aliado
         );
       })
-      .removeClass("item-time-line-transparent");
+      .removeClass("d-none");
+      
       
       jQuery(".item_asesor")
         .removeClass("text-detalle")
