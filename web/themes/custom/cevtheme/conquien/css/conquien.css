@@ -627,6 +627,12 @@ a:hover.miga {
     margin-bottom: 12px !important;
   }
 
+
+  .conquien #row-time-line-items-0 {
+   margin-bottom: 0 !important;
+   flex-flow: row wrap-reverse !important;
+  }
+
   .titulo-sub-menu {
     font-size: 95% !important;
   }
