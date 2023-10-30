@@ -67,7 +67,7 @@
         "drupal/views_data_export": "^1.2",
         "drupal/webform": "^6.0",
         "drupal/webform_content_creator": "^1.7",
-        "drush/drush": "^10.3"
+        "drush/drush": "^11.6"
     },
     "conflict": {
         "drupal/drupal": "*"
