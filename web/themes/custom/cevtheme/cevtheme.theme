@@ -123,21 +123,21 @@ function cevtheme_preprocess_media(array &$variables) {
   $variables['image_url'] = [];
   if(isset($media->field_background_audio)) {
     foreach ($media->field_background_audio as $key => $value) {
-      $variables['image_url'][] = file_create_url($value->entity->getFileUri());
+      $variables['image_url'][] = \Drupal::service('file_url_generator')->generateAbsoluteString($value->entity->getFileUri());
     }
   }
 
   $variables['audio_url'] = [];
   if(isset($media->field_media_audio_file)){
     foreach ($media->field_media_audio_file as $key => $value) {
-      $variables['audio_url'][] = file_create_url($value->entity->getFileUri());
+      $variables['audio_url'][] = \Drupal::service('file_url_generator')->generateAbsoluteString($value->entity->getFileUri());
       foreach ($media->field_transcription as $index => $clave) {
         $datos = [
           "nombre" => $clave->summary,
           "texto" => $clave->value,
           "numeroItem" => $key,
           "numeroIdioma" => $index,
-          "audio" => file_create_url($value->entity->getFileUri()),
+          "audio" => \Drupal::service('file_url_generator')->generateAbsoluteString($value->entity->getFileUri()),
         ];
       }
     }
@@ -152,7 +152,7 @@ function cevtheme_preprocess_media(array &$variables) {
           "nombre" => $clave->summary,
           "texto" => $clave->value,
           "numeroIdioma" => $index,
-          "audio" => file_create_url($value->entity->getFileUri())
+          "audio" => \Drupal::service('file_url_generator')->generateAbsoluteString($value->entity->getFileUri())
         ];
         $variables['playlist_traduccion'][] = $datos;
       }
@@ -161,7 +161,7 @@ function cevtheme_preprocess_media(array &$variables) {
   $variables['image_galeria_url'] = [];
   if(isset($media->field_media_image)) {
     foreach ($media->field_media_image as $key => $value) {
-      $variables['image_galeria_url'][] = file_create_url($value->entity->getFileUri());
+      $variables['image_galeria_url'][] = \Drupal::service('file_url_generator')->generateAbsoluteString($value->entity->getFileUri());
     }
   }
   $variables['playlist_image_url'] = [];
@@ -172,7 +172,7 @@ function cevtheme_preprocess_media(array &$variables) {
       $audio =  $value->entity->field_media_audio_file;
       if($imagen->entity != null){
         $imagenCaption = [
-          "url" => file_create_url($imagen->entity->getFileUri()),
+          "url" => \Drupal::service('file_url_generator')->generateAbsoluteString($imagen->entity->getFileUri()),
           "caption" => $imagen->caption
         ];
         $variables['playlist_image_url'][] = $imagenCaption;  
@@ -188,7 +188,7 @@ function cevtheme_preprocess_media(array &$variables) {
       }
       $array = [
         "titulo" => $value->entity->get('field_titulo_audio')->getString(),
-        "audio" => file_create_url($audio->entity->getFileUri()),
+        "audio" => \Drupal::service('file_url_generator')->generateAbsoluteString($audio->entity->getFileUri()),
         "duracion" => $value->entity->get('field_duracion')->getString()
       ];
       $variables['playlist_audio'][] = $array;
@@ -200,7 +200,7 @@ function cevtheme_preprocess_media(array &$variables) {
   if(isset($media->field_audios)) {
     foreach ($media->field_audios as $key => $value) {
       $audio =  $value->entity->field_media_audio_file;
-      $variables['playlist_audio_url'][] = file_create_url($audio->entity->getFileUri());
+      $variables['playlist_audio_url'][] = \Drupal::service('file_url_generator')->generateAbsoluteString($audio->entity->getFileUri());
       foreach ($value->entity->field_transcription as $index => $clave) {
         $datos = [
           "nombre" => $clave->summary,
@@ -212,7 +212,7 @@ function cevtheme_preprocess_media(array &$variables) {
       }
       $array = [
         "titulo" => $value->entity->getName(),
-        "audio" => file_create_url($audio->entity->getFileUri()),
+        "audio" => \Drupal::service('file_url_generator')->generateAbsoluteString($audio->entity->getFileUri()),
         "color" => $value->entity->get('field_color')->getString()
       ];
       $variables['playlist_audio'][] = $array;

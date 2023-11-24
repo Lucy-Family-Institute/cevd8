@@ -30,7 +30,7 @@ global-styling:
       css/buscador.css: {}
   dependencies:
     - core/jquery
-    - core/jquery.once
+    - core/once
     - core/drupal
 player_audio_modal:
   js:

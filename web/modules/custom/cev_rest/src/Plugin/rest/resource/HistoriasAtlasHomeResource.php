@@ -139,7 +139,10 @@ class HistoriasAtlasHomeResource extends ResourceBase implements DependentPlugin
    */
   protected function loadRecords() {
     //carga nodos de atlas
-    $nids = \Drupal::entityQuery('node')->condition('type','atlas')->execute();
+    $nids = \Drupal::entityQuery('node')
+            ->accessCheck(TRUE)
+            ->condition('type','atlas')
+            ->execute();
     $nodes =  \Drupal\node\Entity\Node::loadMultiple($nids);
     $json = [];
     // Grupo 1
@@ -150,7 +153,7 @@ class HistoriasAtlasHomeResource extends ResourceBase implements DependentPlugin
       $entrada = new \stdClass();
       $fid = $node->field_imagen_dinamica_1->getValue()[0]['target_id'];
       $file = File::load($fid);
-      $entrada->imagen = file_create_url($file->getFileUri());
+      $entrada->imagen = \Drupal::service('file_url_generator')->generateAbsoluteString($file->getFileUri());
       $entrada->titulo = $node->field_titulo_dinamica_1->getValue()[0]['value'];
       $entrada->texto = $node->field_resumen_dinamica_1->getValue()[0]['value'];
       $entrada->enlace = \Drupal::service('path_alias.manager')->getAliasByPath('/node/'.$node->id());
@@ -165,7 +168,7 @@ class HistoriasAtlasHomeResource extends ResourceBase implements DependentPlugin
       $entrada = new \stdClass();
       $fid = $node->field_imagen_dinamica_2->getValue()[0]['target_id'];
       $file = File::load($fid);
-      $entrada->imagen = file_create_url($file->getFileUri());
+      $entrada->imagen = \Drupal::service('file_url_generator')->generateAbsoluteString($file->getFileUri());
       $entrada->titulo = $node->field_titulo_dinamica_2->getValue()[0]['value'];
       $entrada->texto = $node->field_resumen_dinamica_2->getValue()[0]['value'];
       $entrada->enlace = \Drupal::service('path_alias.manager')->getAliasByPath('/node/'.$node->id());
@@ -180,7 +183,7 @@ class HistoriasAtlasHomeResource extends ResourceBase implements DependentPlugin
       $entrada = new \stdClass();
       $fid = $node->field_imagen_dinamica_3->getValue()[0]['target_id'];
       $file = File::load($fid);
-      $entrada->imagen = file_create_url($file->getFileUri());
+      $entrada->imagen = \Drupal::service('file_url_generator')->generateAbsoluteString($file->getFileUri());
       $entrada->titulo = $node->field_titulo_dinamica_3->getValue()[0]['value'];
       $entrada->texto = $node->field_resumen_dinamica_3->getValue()[0]['value'];
       $entrada->enlace = \Drupal::service('path_alias.manager')->getAliasByPath('/node/'.$node->id());
@@ -195,7 +198,7 @@ class HistoriasAtlasHomeResource extends ResourceBase implements DependentPlugin
       $entrada = new \stdClass();
       $fid = $node->field_imagen_dinamica_4->getValue()[0]['target_id'];
       $file = File::load($fid);
-      $entrada->imagen = file_create_url($file->getFileUri());
+      $entrada->imagen = \Drupal::service('file_url_generator')->generateAbsoluteString($file->getFileUri());
       $entrada->titulo = $node->field_titulo_dinamica_4->getValue()[0]['value'];
       $entrada->texto = $node->field_resumen_dinamica_4->getValue()[0]['value'];
       $entrada->enlace = \Drupal::service('path_alias.manager')->getAliasByPath('/node/'.$node->id());
@@ -210,7 +213,7 @@ class HistoriasAtlasHomeResource extends ResourceBase implements DependentPlugin
       $entrada = new \stdClass();
       $fid = $node->field_imagen_portada->getValue()[0]['target_id'];
       $file = File::load($fid);
-      $entrada->imagen = file_create_url($file->getFileUri());
+      $entrada->imagen = \Drupal::service('file_url_generator')->generateAbsoluteString($file->getFileUri());
       $entrada->titulo = $node->label();
       $entrada->texto = $node->field_resumen_corto->getValue()[0]['value'];
       $entrada->enlace = \Drupal::service('path_alias.manager')->getAliasByPath('/node/'.$node->id());
